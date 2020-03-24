@@ -33,7 +33,7 @@ public class MyIndexer extends Configured implements Tool {
 
 		//in order to put stopwords file from local to hdfs
 		FileSystem fs = FileSystem.get(myconf);//hdfs
-		fs.copyFromLocalFile(new Path("file:///users/pgt/2486083h/big_data/src/main/resources/stopword-list.txt"),
+		fs.copyFromLocalFile(new Path("file:///users/pgt/2486083h/big_data_uog/src/main/resources/stopword-list.txt"),
 		new Path("hdfs://bigdata-10.dcs.gla.ac.uk:8020/user/2486083h/stopword-list.txt"));//hdfs
 
 		Job job = Job.getInstance(myconf);

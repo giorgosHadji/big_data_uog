@@ -1,4 +1,4 @@
-package customKey_customPartitioner;
+
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;
@@ -14,8 +14,9 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 import org.apache.hadoop.util.Tool;
 import org.apache.hadoop.util.ToolRunner;
+
+
 import java.net.URI;
-import customKey_customPartitioner.MyMapper.Counters_index;
 
 
 
@@ -76,7 +77,7 @@ public class MyIndexer extends Configured implements Tool {
 		
 		//counters
 		Counters cn=job.getCounters();
-		Long num_of_tokens=cn.findCounter(Counters_index.NUM_TOKENS).getValue();//sum of tokens of whole collection
+		Long num_of_tokens=cn.findCounter(MyMapper.Counters_index.NUM_TOKENS).getValue();//sum of tokens of whole collection
 		Long num_of_docs=cn.findCounter(TaskCounter.MAP_INPUT_RECORDS).getValue();//mapper input records
 		Double avg_doc_length=(num_of_tokens*1.0)/num_of_docs;
 		System.out.println("Average document length = "+avg_doc_length);

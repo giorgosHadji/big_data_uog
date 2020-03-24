@@ -1,4 +1,4 @@
-package customKey_customPartitioner;
+
 
 import org.apache.hadoop.mapreduce.Partitioner;
 

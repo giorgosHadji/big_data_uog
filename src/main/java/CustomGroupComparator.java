@@ -1,4 +1,4 @@
-package customKey_customPartitioner;
+
 
 import org.apache.hadoop.io.WritableComparable;
 import org.apache.hadoop.io.WritableComparator;
